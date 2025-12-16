@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Creator — Modular Website</title>
+  <style>
+    :root{
+      --bg:#0f172a; --panel:#111c33; --card:#1e293b;
+      --muted:#cbd5e1; --text:#ffffff;
+      --line:#334155; --accent:#38bdf8; --accent2:#2563eb;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 16px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; font-family: Arial, sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    header{
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      padding: 56px 18px;
+      text-align:center;
+    }
+    header h1{ margin:0 0 10px; font-size: 34px; }
+    header p{ margin:0; color:#e6f7ff; font-size:16px; }
+    .container{ max-width:1100px; margin:auto; padding: 26px 18px 60px; }
+    nav{
+      position: sticky; top:0; z-index:10;
+      background: rgba(2,6,23,.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148,163,184,.2);
+    }
+    nav .inner{
+      max-width:1100px; margin:auto; padding: 10px 18px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    }
+    .brand{ font-weight:800; letter-spacing:.2px; }
+    .links{ display:flex; gap:10px; flex-wrap:wrap; }
+    .links a{
+      color:var(--muted); text-decoration:none;
+      padding:10px 12px; border-radius: 12px;
+      border:1px solid rgba(51,65,85,.35);
+    }
+    .links a:hover{ color:#fff; border-color: rgba(56,189,248,.65); }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){ .grid{ grid-template-columns:1fr; } }
+    .card{
+      background: var(--card);
+      border:1px solid rgba(51,65,85,.55);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{ margin: 0 0 10px; font-size: 22px; }
+    .muted{ color:var(--muted); }
+    .pill{
+      display:inline-block;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(56,189,248,.55);
+      color:#e6f7ff; margin-right:6px; margin-bottom:8px;
+      font-size: 13px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 12px 14px; border-radius: 14px;
+      background: var(--accent); color:#00111a;
+      text-decoration:none; font-weight:800;
+      border:none; cursor:pointer;
+    }
+    .btn.secondary{
+      background: transparent; color:#fff;
+      border:1px solid rgba(51,65,85,.8);
+    }
+    .btn:active{ transform: translateY(1px); }
+    .cards3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 900px){ .cards3{ grid-template-columns:1fr; } }
+    .mini{
+      background: rgba(15,23,42,.55);
+      border:1px solid rgba(51,65,85,.5);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .mini h3{ margin:0 0 6px; font-size: 16px; }
+    .mini p{ margin:0; color: var(--muted); font-size: 14px; }
+
+    /* Forms */
+    label{ display:block; margin: 12px 0 6px; font-weight: 700; }
+    input, select, textarea{
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0b1224;
+      color:#fff;
+      outline:none;
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 700px){ .row2{ grid-template-columns:1fr; } }
+    .notice{
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer{
+      text-align:center;
+      padding: 18px;
+      background: #020617;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .divider{ height:1px; background: rgba(148,163,184,.18); margin: 14px 0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="brand">Web Creator</div>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#booking">Booking</a>
+      <a href="#shop">Mini Shop</a>
+      <a href="#brief">Client Brief</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <h1>Modern, Modular Websites</h1>
+  <p>One template that adapts to any client request — fast, clean, responsive.</p>
+</header>
+
+<div class="container">
+
+  <section class="grid">
+    <div class="card">
+      <h2>What I build</h2>
+      <p class="muted">
+        This is a <b>multi-purpose website</b> you can reuse for many clients: portfolio, booking,
+        mini shop, and a full brief form. Easy to customize.
+      </p>
+      <div style="margin-top:12px;">
+        <span class="pill">Responsive</span>
+        <span class="pill">Fast</span>
+        <span class="pill">Clean UI</span>
+        <span class="pill">Client Brief</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="cards3" id="services">
+        <div class="mini">
+          <h3>Business Website</h3>
+          <p>Homepage, services, contact, CTA.</p>
+        </div>
+        <div class="mini">
+          <h3>Portfolio</h3>
+          <p>Projects + testimonials.</p>
+        </div>
+        <div class="mini">
+          <h3>Landing Page</h3>
+          <p>High conversion, short & clear.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="#brief">📝 Start a request</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Quick info</h2>
+      <p class="muted" style="margin-top:0;">
+        Use this template as a base for every client.
+        Replace text + colors, add sections if needed.
+      </p>
+      <div class="divider"></div>
+      <p class="muted"><b>Email:</b> ayoub.fiverr92@gmail.com</p>
+      <p class="muted"><b>Fiverr:</b> https://www.fiverr.com/ayoub921i</p>
+      <p class="notice">Tip: later we can connect this form to an automatic database / Google Sheet.</p>
+    </div>
+  </section>
+
+  <section class="card" id="portfolio" style="margin-top:18px;">
+    <h2>Portfolio (example)</h2>
+    <p class="muted">Replace these with your real projects/screenshots later.</p>
+    <div class="cards3">
+      <div class="mini"><h3>Project #1</h3><p>Business landing page</p></div>
+      <div class="mini"><h3>Project #2</h3><p>Portfolio website</p></div>
+      <div class="mini"><h3>Project #3</h3><p>Booking website</p></div>
+    </div>
+  </section>
+
+  <section class="card" id="booking" style="margin-top:18px;">
+    <h2>Booking (demo)</h2>
+    <p class="muted">This is a demo booking form (no real calendar yet).</p>
+
+    <form id="bookingForm">
+      <div class="row2">
+        <div>
+          <label for="bkName">Name *</label>
+          <input id="bkName" required placeholder="Your name">
+        </div>
+        <div>
+          <label for="bkEmail">Email *</label>
+          <input id="bkEmail" type="email" required placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label for="bkDate">Preferred date</label>
+          <input id="bkDate" type="date">
+        </div>
+        <div>
+          <label for="bkType">Call type</label>
+          <select id="bkType">
+            <option>Discovery call (15 min)</option>
+            <option>Project call (30 min)</option>
+            <option>Support / Maintenance</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Request a call</button>
+      <p class="notice" id="bkMsg" style="display:none;"></p>
+    </form>
+  </section>
+
+  <section class="card" id="shop" style="margin-top:18px;">
+    <h2>Mini Shop (demo)</h2>
+    <p class="muted">Example “packages” you can sell (like Fiverr tiers).</p>
+
+    <div class="cards3">
+      <div class="mini">
+        <h3>Basic</h3>
+        <p>1 page landing • Responsive • 2 revisions</p>
+      </div>
+      <div class="mini">
+        <h3>Standard</h3>
+        <p>Up to 3 pages • Contact form • 3 revisions</p>
+      </div>
+      <div class="mini">
+        <h3>Premium</h3>
+        <p>Up to 6 pages • Extra sections • Priority delivery</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="brief" style="margin-top:18px;">
+    <h2>Client Brief (send me your request)</h2>
+    <p class="muted">Fill this and click Send. It will open your email app with everything pre-filled.</p>
+
+    <form id="briefForm">
+      <div class="row2">
+        <div>
+          <label for="name">Full name *</label>
+          <input id="name" name="name" placeholder="John Doe" required />
+        </div>
+        <div>
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" placeholder="john@email.com" required />
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label for="phone">Phone / WhatsApp</label>
+          <input id="phone" name="phone" placeholder="+33 ..." />
+        </div>
+        <div>
+          <label for="business">Business / Project name</label>
+          <input id="business" name="business" placeholder="My Brand" />
+        </div>
+      </div>
+
+      <label for="type">Website type *</label>
+      <select id="type" name="type" required>
+        <option value="">Select...</option>
+        <option>Landing Page</option>
+        <option>Portfolio</option>
+        <option>Business Website (Showcase)</option>
+        <option>E-commerce</option>
+        <option>Other</option>
+      </select>
+
+      <label for="description">What do you want? (exact details) *</label>
+      <textarea id="description" name="description" placeholder="Pages needed, style, content you already have, examples you like..." required></textarea>
+
+      <div class="row2">
+        <div>
+          <label for="budget">Budget (EUR) *</label>
+          <input id="budget" name="budget" type="number" min="0" step="10" placeholder="150" required />
+        </div>
+        <div>
+          <label for="deadline">Deadline</label>
+          <input id="deadline" name="deadline" type="date" />
+        </div>
+      </div>
+
+      <label for="features">Key features needed</label>
+      <input id="features" name="features" placeholder="Contact form, gallery, booking, blog, SEO..." />
+
+      <label for="bonus">Bonus / Extra notes</label>
+      <textarea id="bonus" name="bonus" placeholder="Anything else you want to add..."></textarea>
+
+      <button class="btn" type="submit">Send my request</button>
+      <p class="notice">Opens an email (mailto) — later we can make it automatic.</p>
+    </form>
+  </section>
+
+  <section class="card" id="contact" style="margin-top:18px;">
+    <h2>Contact</h2>
+    <p class="muted" style="margin-top:0;">Email: <b>ayoub.fiverr92@gmail.com</b></p>
+    <p class="muted">Fiverr: <b>ayoub921i</b> (put your gig link here later)</p>
+  </section>
+
+</div>
+
+<footer>© 2025 — Web Creator</footer>
+
+<script>
+  // ====== BOOKING DEMO (just feedback) ======
+  const bookingForm = document.getElementById("bookingForm");
+  const bkMsg = document.getElementById("bkMsg");
+  bookingForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    bkMsg.style.display = "block";
+    bkMsg.textContent = "✅ Request saved (demo). For real booking, we can connect Calendly later.";
+    bookingForm.reset();
+  });
+
+  // ====== CLIENT BRIEF EMAIL (mailto) ======
+  const YOUR_EMAIL = "ayoub.fiverr92@gmail.com";
+  const form = document.getElementById("briefForm");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const obj = Object.fromEntries(data.entries());
+
+    const subject = encodeURIComponent("Website Request - " + (obj.business || obj.name));
+    const body = encodeURIComponent(
+`CLIENT DETAILS
+Name: ${obj.name}
+Email: ${obj.email}
+Phone/WhatsApp: ${obj.phone || "-"}
+Business/Project: ${obj.business || "-"}
+
+PROJECT
+Website type: ${obj.type}
+Description:
+${obj.description}
+
+Budget: ${obj.budget} EUR
+Deadline: ${obj.deadline || "-"}
+
+Key features: ${obj.features || "-"}
+
+BONUS / EXTRA NOTES
+${obj.bonus || "-"}`
+    );
+
+    window.location.href = `mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
